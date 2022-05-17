@@ -1,6 +1,7 @@
-import { Card, CardContent, Typography } from "@mui/material"
-
+import { Button, Card, CardContent, Typography } from "@mui/material"
+import { useNavigate } from "react-router-dom";
 export const CardData=({name,email,details,gender})=>{
+    const navigate=useNavigate();
     return (
         <div>
             CARD !!
@@ -13,6 +14,10 @@ export const CardData=({name,email,details,gender})=>{
                     <Typography variant="body"> Details : {details}</Typography>
                 </CardContent>
             </Card>
+            <Button
+            color="secondary"
+            onClick={()=>navigate("/form")}
+            >Back</Button>
         </div>
     )
 }
